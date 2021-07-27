@@ -1,7 +1,7 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayRouteConfig
 metadata:
-  name: GatewayName-Route
+  name: ServiceNameGatewayRoute
 spec:
   service:
     name: ServiceName
