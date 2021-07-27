@@ -4,6 +4,6 @@ metadata:
   name: ServiceName-gateway-mapping
 spec:
   gatewayRef:
-    name: ServiceNameGateway
+    name: ServiceName-gateway
   routeConfigRef:
-    name: ServiceNameGatewayRoute
+    name: ServiceName-gateway-route
