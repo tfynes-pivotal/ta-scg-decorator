@@ -1,22 +1,15 @@
 accelerator:
   displayName: ta-scg-decorator
-  description: basic spring cloud gateway decorator for your application
+  description: basic spring cloud gateway decorator for your application..
   iconUrl: https://github.com/tfynes-pivotal/ta-scg-decorator/blob/main/scg.png?raw=true
   tags: []
   options:
+
   - name: serviceName
     label: Service to facade
     display: true
 
-  - name: gatewayName
-    label: Spring Cloud Gateway Name
-    display: true
 
-
-  - name: gatewayRoute
-    label: Spring Cloud Gateway Route
-    display: true
-    defaultValue: "my-route"
 
 engine:
   include:
@@ -28,10 +21,6 @@ engine:
       - text: ServiceName
         with: "#serviceName"
 
-    - type: ReplaceText
-      substitutions:
-      - text: GatewayName
-        with: "#gatwayName"
 
 
 #GatewayName
