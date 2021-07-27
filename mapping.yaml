@@ -1,0 +1,9 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: hoppython-gateway-mapping
+spec:
+  gatewayRef:
+    name: hoppython-gateway
+  routeConfigRef:
+    name: hoppython-gateway-routes
