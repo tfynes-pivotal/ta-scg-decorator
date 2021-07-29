@@ -2,6 +2,7 @@
 kubectl apply -f ./gateway-config.yaml
 kubectl apply -f ./route-config.yaml
 kubectl apply -f ./mapping.yaml
+sleep 10
 kubectl -n spring-cloud-gateway patch svc scg-operator -p '{"spec":{"type":"LoadBalancer"}}'
 kubectl expose pod ServiceName-gateway-0 --port=80 --target-port=8080 --type=LoadBalancer
 echo -n Waiting for external IPs
