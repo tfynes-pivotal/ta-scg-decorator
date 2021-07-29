@@ -17,6 +17,6 @@ echo curl http://$(kubectl get svc ServiceName-gateway-0 -o jsonpath='{.status.l
 echo
 until [ -n "$(kubectl -n spring-cloud-gateway get svc scg-operator -o jsonpath='{.status.loadBalancer.ingress[0].ip}')" ]; do
     sleep 2
-echo Observe openapi documentation for exposed APIs here; http://$(kubectl -n spring-cloud-gateway get svc scg-operator -o jsonpath='{.status.loadBalancer.ingress[0].ip}')/openapi
+echo "Observe openapi documentation for exposed APIs here; http://$(kubectl -n spring-cloud-gateway get svc scg-operator -o jsonpath=\'{.status.loadBalancer.ingress[0].ip}\')/openapi"
 echo
 
