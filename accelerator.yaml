@@ -9,6 +9,11 @@ accelerator:
     label: Service to facade
     display: true
 
+  - name: apiTitle
+    label: API Title
+    display: true
+    defaultValue: Tanzu Demo APIs
+
 
 
 engine:
@@ -20,6 +25,10 @@ engine:
       substitutions:
       - text: ServiceName
         with: "#serviceName"
+    - type: ReplaceText
+      substitutions:
+      - text: ApiTitle
+        with: "#apiTitle"
 
 
 

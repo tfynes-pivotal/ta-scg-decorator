@@ -2,3 +2,7 @@ apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGateway
 metadata:
   name: ServiceName-gateway
+spec:
+  api:
+    title: ApiTitle
+    version: 0.0.1

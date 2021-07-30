@@ -8,5 +8,10 @@ kubectl -n api-portal rollout restart deployment api-portal-server
 kubectl -n api-portal patch svc api-portal-server --type merge -p '{"spec":{"ports": [{"port": 80, "targetPort":8080 }]}}'
 kubectl -n api-portal patch svc api-portal-server -p '{"spec":{"type":"LoadBalancer"}}'
 
+until [ -n "$(kubectl -n api-portal get svc api-portal-server -o jsonpath='{.status.loadBalancer.ingress[0].ip}')" ]; do
+    sleep 2
+    echo -n .
+done
+
 echo Visit API Portal Service here: http://$(kubectl -n api-portal get svc api-portal-server -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
